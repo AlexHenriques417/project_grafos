@@ -1,11 +1,5 @@
 package br.com.unipe;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 public class Aresta {
     private String nome;
     private Vertice verticeOrigem;
@@ -35,8 +29,20 @@ public class Aresta {
         return nome != null ? nome : "";
     }
 
+    public Vertice getVerticeOrigem() {
+        return verticeOrigem;
+    }
+
+    public Vertice getVerticeDestino() {
+        return verticeDestino;
+    }
+
+    public Integer getPeso() {
+        return peso != null ? peso : 0;
+    }
+
     @Override
     public String toString() {
-        return "\n" + getNome() + "{" + verticeOrigem.getNome() + "," + verticeDestino.getNome() + "}";
+        return "\n" + getNome() + "{" + verticeOrigem.getNome() + "," + verticeDestino.getNome() + " (Peso: " + getPeso() + ")}";
     }
 }
